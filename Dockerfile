@@ -1,4 +1,4 @@
-FROM golang:1.21.1-alpine3.18 as builder
+FROM 224935473367.dkr.ecr.eu-central-1.amazonaws.com/ratepay-proxy:latest as builder
 
 WORKDIR /build
 COPY . .
@@ -11,7 +11,7 @@ ENV GOOS: linux
 RUN make build
 RUN upx -9 connectivity_tester
 
-FROM golang:1.21.1-alpine3.18
+FROM 224935473367.dkr.ecr.eu-central-1.amazonaws.com/ratepay-proxy:latest
 
 WORKDIR /app
 

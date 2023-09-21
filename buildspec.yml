@@ -11,8 +11,3 @@ phases:
       - docker build -t ratepay .
       - docker tag ratepay:latest 224935473367.dkr.ecr.eu-central-1.amazonaws.com/ratepay:latest
       - docker push 224935473367.dkr.ecr.eu-central-1.amazonaws.com/ratepay:latest
-  post_build:
-    commands:
-      - echo Build completed on `date`
-      - echo Pushing the Docker image...
-      - docker push $AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/$IMAGE_REPO_NAME:$IMAGE_TAG

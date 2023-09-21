@@ -34,6 +34,8 @@ func main() {
 		if err != nil {
 			log.Printf("error performing request: %s\t%s\t%s", proto, url, body)
 		}
+
+		log.Printf("success performing request: %s\t%s\t%s", proto, url, body)
 	})
 	r.Run(fmt.Sprintf("0.0.0.0:%s", *port))
 }
